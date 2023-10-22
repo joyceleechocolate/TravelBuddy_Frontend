@@ -1,0 +1,73 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+/* Reset default list styles */
+.navbar {
+  list-style: none;
+  margin: 0;
+  width:80vw;
+  background-color: #a84818; /* Background color for the navbar */
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+
+.navbar li {
+  display: inline-block; /* Display list items horizontally */
+  margin-right: 20px; /* Spacing between list items */
+}
+
+.navbar li:last-child {
+  margin-right: 0; /* Remove right margin from the last item */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #EDc7b7; /* Text color for the links */
+  font-weight: bold; /* Bold font for links */
+  padding: auto;
+  border-radius: 4px; /* Rounded corners for the links */
+}
+
+.navbar a:hover {
+  color:#1a3d26;
+  background-color: #edc7b7; /* Background color on hover */
+  height: 100%;
+  
+}
+
+h2 {
+  text-align: center;
+  color: #1a3d26
+}
+
+.add__trip__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add__trip__form, label {
+  justify-content: space-evenly;
+}
+
+label {
+  flex: 1; /* Label takes up equal space with input */
+  margin-right: 10px; /* Optional: Add spacing between label and input */
+}
+
+.input__field {
+  width: 120x; 
+  height: 120px; 
+  border: 1px 
+  solid #999999; 
+  padding: 5px;
+  resize: none;
+}
