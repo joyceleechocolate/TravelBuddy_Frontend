@@ -23,7 +23,7 @@ export default function Register({handleInputChange, formData}) {
   }
 
   if (shouldRedirect) {
-    return <Navigate to="/login"/>
+    return <Navigate to="/Trips"/>
   } else {
     return <Form formType={"Register"} handleInputChange={handleInputChange} formData={formData} handleSubmit={handleSubmit} responseMsg={responseMsg}/>
   }

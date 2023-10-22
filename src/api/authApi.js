@@ -39,7 +39,19 @@ async function basicFetch(url, payload) {
     return body
   }
 
-  export async function getAllItinerary(token, itineraryId) {
+  export async function addTrip(context) {
+    const payload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(context)
+    }
+    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/",payload)
+    return body
+  } 
+
+  export async function getAllItinerary(token) {
     const payload = {
       method: "GET",
       headers: {
@@ -62,7 +74,19 @@ async function basicFetch(url, payload) {
     const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trip/itinerary/${itineraryId}`, payload)
     return body
   }
-  // export const getItineraryEndpoint = () => `http://127.0.0.1:8000/api/cars/all/${carID}/`
+
+  export async function addItinerary(context) {
+    const payload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(context)
+    }
+    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/itinerary",payload)
+    return body
+  }
+
 
 //   export async function getModel(token) {
 //     const payload = {
