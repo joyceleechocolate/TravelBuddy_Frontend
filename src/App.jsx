@@ -51,7 +51,7 @@ function App() {
                 <Route path="/register" element={<Register handleInputChange={handleInputChange} formData={formData} /> } /> 
                 <Route path="/login" element={<Login handleInputChange={handleInputChange} formData={formData} handleToken={handleToken} />} />
                 <Route path="/logout" element={<Logout userToken={userToken} setUserToken={setUserToken}/>} /> 
-                <Route path="/trips/itinerary/:itineraryId" element={<Itinerary />}/>
+                <Route path="/trips/:tripId/itinerary/" element={<Itinerary />}/>
                 <Route path="/trips" element={<Trips  />} /> 
                 <Route path="*" element={<NotFound />} />
             </Routes>

@@ -22,7 +22,7 @@ export default function Login({handleInputChange, formData, handleToken}) {
   }
   if (shouldRedirect) {
     console.log("shouldRedirect")
-    return <Navigate to="/cars"/>
+    return <Navigate to="/Trips"/>
   } else {
     return <Form formType={"Login"} handleInputChange={handleInputChange} formData={formData}handleToken={handleToken} handleSubmit={handleSubmit} responseMsg={responseMsg}/>
   }

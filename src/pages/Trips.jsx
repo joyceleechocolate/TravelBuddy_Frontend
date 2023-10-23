@@ -1,11 +1,8 @@
 import { getTrip } from '../api/authApi';
-import { getItinerary } from '../api/authApi';
 import UserContext from '../contexts/UserContext';
 import { useState, useEffect, useContext } from 'react';
-import { Link, useParams } from "react-router-dom"
 import FloatingActionButtons from '../components/TripFloatingAddingButton';
 import TripList from '../components/ComponentTrips'
-// import Itinerary from '../components/ComponentItinerary';
 
 
 export default function Trips(){
@@ -36,3 +33,25 @@ return(
     </>
 );
 }
+
+// useEffect(() => {
+//   async function performAddTrips() {
+//       const tripRes = await addTrip(newTripNameData, userToken);
+//       console.log(tripRes)
+//       // setTripName(trip);
+//   }
+//   if(userToken) {
+//       performAddTrips();
+//   }
+// }, [userToken]);
+
+// useEffect(() => {
+//   async function performAddItinerary() {
+//       const itineraryRes = await addItinerary(newItineraryData, userToken);
+//       console.log(itineraryRes)
+//       // setItinerary(itinerary);
+//   }
+//   if(userToken) {
+//       performAddItinerary();
+//   }
+// }, [userToken]);

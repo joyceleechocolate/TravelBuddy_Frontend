@@ -25,45 +25,49 @@ async function basicFetch(url, payload) {
       body: JSON.stringify(context)
     }
     const body = await basicFetch("http://127.0.0.1:8000/api/account/get-token", payload)
+    console.log(body.token)
     return body.token
   }
 
   export async function getTrip(token) {
+    console.log(token)
     const payload = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Token ${token}`
       }  }
-    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/", payload)
+    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trips/", payload)
     return body
   }
 
-  export async function addTrip(context) {
+  export async function addTrip(token, newTripNameData) {
     const payload = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // "Authorization": `Token ${token}`
+        "Authorization": `Token 4371c7032114376077d7f7b29a1fd54cef21cbbd`
       },
-      body: JSON.stringify(context)
+      body: JSON.stringify(newTripNameData)
     }
-    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/",payload)
+    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trips/",payload)
     return body
   } 
 
-  export async function getAllItinerary(token) {
+  export async function getAllItinerary(token, tripId) {
     const payload = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Token ${token}`
       }  }
-    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/itinerary/", payload)
+    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trips/${tripId}/itinerary/`, payload)
     // const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trip/itinerary/${itineraryId}`, payload)
     return body
   }
 
-  export async function getItinerary(token, itineraryId) {
+  export async function getItinerary(token, tripId, itineraryId) {
     const payload = {
       method: "GET",
       headers: {
@@ -71,19 +75,21 @@ async function basicFetch(url, payload) {
         "Authorization": `Token ${token}`
       }  }
     // const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/itinerary/", payload)
-    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trip/itinerary/${itineraryId}`, payload)
+    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trips/${tripId}/itinerary/${itineraryId}`, payload)
     return body
   }
 
-  export async function addItinerary(context) {
+  export async function addItinerary(token, newItineraryData) {
     const payload = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // "Authorization": `Token ${token}`
+        "Authorization": `Token 4371c7032114376077d7f7b29a1fd54cef21cbbd`
       },
-      body: JSON.stringify(context)
+      body:JSON.stringify(newItineraryData)
     }
-    const body = await basicFetch("http://127.0.0.1:8000/api/travelbuddy/trip/itinerary",payload)
+    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trips/${tripId}/itinerary/`,payload)
     return body
   }
 
