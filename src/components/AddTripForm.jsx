@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import { addItinerary, addTrip } from '../api/authApi'
 import UserContext from '../contexts/UserContext';
+import { useParams } from 'react-router-dom';
 
 
 export default function AddTripForm() {
@@ -13,6 +14,9 @@ export default function AddTripForm() {
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState('');
   const [itinerary, setItinerary] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null); 
+  const params = useParams();
   
 // function for handling adding state changes to backend
   const handleTripSubmit = async(event) => {
@@ -29,33 +33,33 @@ export default function AddTripForm() {
       trip_name: tripName
     }
     console.log(newTripNameData)
-    
+    const tripRes = await addTrip(userToken, newTripNameData);
+
     // setting variables for form data, might need to change this to match your backend variables
+    if (tripRes.id) {
     const newItineraryData = {
       // trip_id: null,
-      travel_date_begin: travelDateBegin, 
-      travel_date_end: travelDateEnd,
-      travel_location: location, 
-      travel_duration: duration, 
-      detail_itinerary: itinerary
-    }
-    console.log(newItineraryData)
+        travel_date_begin: travelDateBegin, 
+        travel_date_end: travelDateEnd,
+        travel_location: location, 
+        travel_duration: duration, 
+        detail_itinerary: itinerary
+      };
+      console.log(newItineraryData)
     // calling addTrip with new trip
-    const tripRes = await addTrip(newTripNameData);
-
-    if(tripRes.id) {
-      newItineraryData.trip_id = tripRes.id;
+    
+    const itineraryRes = await addItinerary(userToken, tripRes.id, newItineraryData);
+    
+    if(itineraryRes.id) {
+      setSuccess('Trip and itinerary added successfully.');
+    } else {
+      setError('Failed to add itinerary.');
+      }
+    } else {
+      setError('Failed to add trip.');
     }
+  };
 
-    // calling addItinerary with new itinerary data;
-    const itineraryRes = await addItinerary(newItineraryData);
-
-    // checking to see if it works
-    console.log('Trip added:', tripRes)
-
-    // checking to see if it is passing data
-    console.log('Itinerary Added:', itineraryRes)
-  }
 
   return (
     <div className='add__trip__container'>

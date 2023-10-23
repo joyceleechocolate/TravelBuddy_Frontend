@@ -79,7 +79,7 @@ async function basicFetch(url, payload) {
     return body
   }
 
-  export async function addItinerary(token, newItineraryData) {
+  export async function addItinerary(token, tripId, newItineraryData) {
     const payload = {
       method: "POST",
       headers: {
