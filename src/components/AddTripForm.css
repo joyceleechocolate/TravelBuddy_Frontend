@@ -1,0 +1,30 @@
+.add__trip__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    margin: auto !important;
+  }
+.add__trip__field__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
+    width: 40vw;
+}
+
+.add__trip__label {
+    width: 9rem;
+    text-align: left;
+}
+
+.add__trip__input, 
+.add__trip__textarea {
+    width: 17rem;
+}
+
+.add__trip__button {
+align-self:flex-end;
+margin-top: 1rem;
+}

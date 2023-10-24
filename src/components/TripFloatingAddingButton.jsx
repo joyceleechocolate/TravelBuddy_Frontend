@@ -16,8 +16,8 @@ export default function FloatingActionButtons() {
     return (
       <>
       <Box sx={{ '& > :not(style)': { m: 1 } }}>
-        <Fab color="warning" aria-label="add">
-          <AddIcon className='add__new__trip__btn' onClick={handleAddTripClick} />
+        <Fab color="warning" aria-label="add" onClick={handleAddTripClick}>
+          <AddIcon className='add__new__trip__btn'  />
         </Fab>
       </Box>
       <div>

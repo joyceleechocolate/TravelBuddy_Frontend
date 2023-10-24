@@ -11,7 +11,7 @@
 .navbar {
   list-style: none;
   margin: 0;
-  width:80vw;
+  width:100%;
   background-color: #a84818; /* Background color for the navbar */
   display: flex;
   justify-content: space-evenly;
@@ -47,21 +47,7 @@ h2 {
   color: #1a3d26
 }
 
-.add__trip__form {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
 
-.add__trip__form, label {
-  justify-content: space-evenly;
-}
-
-label {
-  flex: 1; /* Label takes up equal space with input */
-  margin-right: 10px; /* Optional: Add spacing between label and input */
-}
 
 .input__field {
   width: 120x; 
@@ -71,3 +57,4 @@ label {
   padding: 5px;
   resize: none;
 }
+

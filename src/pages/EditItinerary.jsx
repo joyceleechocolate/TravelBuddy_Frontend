@@ -1,11 +1,11 @@
-import { getItinerary, getAllItinerary } from '../api/authApi';
+import { getAllItinerary, updateItinerary } from '../api/authApi';
 import UserContext from '../contexts/UserContext';
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 
 
-export default function Itinerary(){
+export default function UpdateItinerary(){
 
     const [itinerary, setItinerary] = useState({});
     const userToken = useContext(UserContext);

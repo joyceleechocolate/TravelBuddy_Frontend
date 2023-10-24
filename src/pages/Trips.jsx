@@ -3,6 +3,7 @@ import UserContext from '../contexts/UserContext';
 import { useState, useEffect, useContext } from 'react';
 import FloatingActionButtons from '../components/TripFloatingAddingButton';
 import TripList from '../components/ComponentTrips'
+import './Trips.css'
 
 
 export default function Trips(){
@@ -25,33 +26,18 @@ export default function Trips(){
 
 
 return(
-    <>
-    <h1>My Trips</h1>
+    <div className='trips__page__container'>
+        <div className='trips__page__title'>
+            <h1>My Trips</h1>
+        </div>
+    <div>
     <FloatingActionButtons />
+    <div className='trips__list__container'>
     <TripList trips={trips} />
+    </div>
+    </div>
     
-    </>
+    
+    </div>
 );
 }
-
-// useEffect(() => {
-//   async function performAddTrips() {
-//       const tripRes = await addTrip(newTripNameData, userToken);
-//       console.log(tripRes)
-//       // setTripName(trip);
-//   }
-//   if(userToken) {
-//       performAddTrips();
-//   }
-// }, [userToken]);
-
-// useEffect(() => {
-//   async function performAddItinerary() {
-//       const itineraryRes = await addItinerary(newItineraryData, userToken);
-//       console.log(itineraryRes)
-//       // setItinerary(itinerary);
-//   }
-//   if(userToken) {
-//       performAddItinerary();
-//   }
-// }, [userToken]);

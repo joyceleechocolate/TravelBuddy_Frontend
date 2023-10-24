@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import { addItinerary, addTrip } from '../api/authApi'
 import UserContext from '../contexts/UserContext';
 import { useParams } from 'react-router-dom';
+import './AddTripForm.css';
 
 
 export default function AddTripForm() {
@@ -64,62 +65,74 @@ export default function AddTripForm() {
   return (
     <div className='add__trip__container'>
         <form className='add__trip__form'>
-            <div>
-              <label htmlFor="">Trip Name:
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor="">
+                Trip Name:
+              </label>
               <input 
+              className='add__trip__input'
               type="text"
               id='tripName'
               // settig the value of field to tripName
               value={tripName}
               // setting trip name when it changes
               onChange={(e) => setTripName(e.target.value)}/>
-              </label>
             </div>
 
-            <div>
-              <label htmlFor=""> Travel Date Begin:
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor=""> 
+              Travel Date Begin:
+              </label>
               <input 
+              className='add__trip__input'
               type="text"
               id='travelDateBegin'
               value={travelDateBegin}
               onChange={(e) => setTravelDateBegin(e.target.value)}/>
-              </label>
             </div>
 
-            <div>
-              <label htmlFor=""> Travel Date End:
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor="">
+                Travel Date End:
+              </label>
               <input 
+              className='add__trip__input'
               type="text"
               id='travelDateEnd'
               value={travelDateEnd}
               onChange={(e) => setTravelDateEnd(e.target.value)}/>
-              </label>
             </div>
 
-            <div>
-              <label htmlFor=""> Location:
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor="">
+                Location:
+              </label>
               <input 
+              className='add__trip__input'
               type="text"
               id='location'
               value={location}
               onChange={(e) => setLocation(e.target.value)}/>
-              </label>
             </div>
 
-            <div>
-              <label htmlFor="">Duration:
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor="">
+                Duration:
+              </label>
               <input 
+              className='add__trip__input'
               type="text"
               id='duration'
               value={duration}
               onChange={(e) =>setDuration(e.target.value)}/>
-              </label>
             </div>
 
-            <div>
-              <label htmlFor="">Detail Itinerary:</label>
+            <div className='add__trip__field__container'>
+              <label className='add__trip__label'htmlFor="">
+                Detail Itinerary:
+              </label>
               <textarea 
-              className="input__field" 
+              className="add__trip__textarea" 
               id="itinerary" 
               name="itinerary" 
               rows="5"

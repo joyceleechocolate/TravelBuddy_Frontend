@@ -55,6 +55,20 @@ async function basicFetch(url, payload) {
     return body
   } 
 
+  export async function updateTrip(token, tripId, updateTripNameData) {
+    const payload = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        // "Authorization": `Token ${token}`
+        "Authorization": `Token 4371c7032114376077d7f7b29a1fd54cef21cbbd`
+      },
+      body:JSON.stringify(updateTripNameData)
+    }
+    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trips/${tripId}`,payload)
+    return body
+  }
+
   export async function getAllItinerary(token, tripId) {
     const payload = {
       method: "GET",
@@ -93,7 +107,19 @@ async function basicFetch(url, payload) {
     return body
   }
 
-
+  export async function updateItinerary(token, tripId, updatedItineraryData) {
+    const payload = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        // "Authorization": `Token ${token}`
+        "Authorization": `Token 4371c7032114376077d7f7b29a1fd54cef21cbbd`
+      },
+      body:JSON.stringify(updatedItineraryData)
+    }
+    const body = await basicFetch(`http://127.0.0.1:8000/api/travelbuddy/trips/${tripId}/itinerary/`,payload)
+    return body
+  }
 //   export async function getModel(token) {
 //     const payload = {
 //       method: "GET",
