@@ -28,13 +28,16 @@ export default function Trips(){
 return(
     <div className='trips__page__container'>
         <div className='trips__page__title'>
-            <h1>My Trips</h1>
+            <h2>My Trips</h2>
         </div>
-    <div>
-    <FloatingActionButtons />
+    <div className='trips__body__view'>
     <div className='trips__list__container'>
-    <TripList trips={trips} />
+        <TripList trips={trips} />
     </div>
+    <div className='trips__form__container'>
+        <FloatingActionButtons />
+    </div>
+
     </div>
     
     

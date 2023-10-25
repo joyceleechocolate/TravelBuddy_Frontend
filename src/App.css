@@ -3,11 +3,22 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /* --bg-image: url('./utils/imgs/bg-image.jpg') */
+  --main-font-color: #282f2c;
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/640781/pexels-photo-640781.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  /* opacity: 0.75; */
+
 }
 
 
-
 /* Reset default list styles */
+.App {
+  height: 100vh;
+}
 .navbar {
   list-style: none;
   margin: 0;
@@ -44,7 +55,7 @@
 
 h2 {
   text-align: center;
-  color: #1a3d26
+  color: #9bb4a4
 }
 
 
@@ -58,3 +69,10 @@ h2 {
   resize: none;
 }
 
+
+.main__view {
+  text-shadow: 2px 2px 1px rgba(17, 17, 17, 0.8);
+  font-size: 1.3rem;
+  height: 80%;
+  color: #8f8f8f;
+}

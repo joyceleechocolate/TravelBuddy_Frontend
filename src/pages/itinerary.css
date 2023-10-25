@@ -1,0 +1,11 @@
+.itinerary__list__container {
+    display: inline-block;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: ; */
+    text-align: left !important;
+    font-size: 1.25rem;
+    overflow-x: auto;
+    overflow-y: auto;
+}

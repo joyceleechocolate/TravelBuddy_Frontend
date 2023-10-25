@@ -75,6 +75,7 @@ export default function AddTripForm() {
               id='tripName'
               // settig the value of field to tripName
               value={tripName}
+              placeholder=''
               // setting trip name when it changes
               onChange={(e) => setTripName(e.target.value)}/>
             </div>
@@ -88,6 +89,7 @@ export default function AddTripForm() {
               type="text"
               id='travelDateBegin'
               value={travelDateBegin}
+              placeholder='"YYYY-MM-DD"'
               onChange={(e) => setTravelDateBegin(e.target.value)}/>
             </div>
 
@@ -100,6 +102,7 @@ export default function AddTripForm() {
               type="text"
               id='travelDateEnd'
               value={travelDateEnd}
+              placeholder='"YYYY-MM-DD"'
               onChange={(e) => setTravelDateEnd(e.target.value)}/>
             </div>
 
@@ -112,6 +115,7 @@ export default function AddTripForm() {
               type="text"
               id='location'
               value={location}
+              placeholder=''
               onChange={(e) => setLocation(e.target.value)}/>
             </div>
 
@@ -124,6 +128,7 @@ export default function AddTripForm() {
               type="text"
               id='duration'
               value={duration}
+              placeholder=''
               onChange={(e) =>setDuration(e.target.value)}/>
             </div>
 
@@ -137,6 +142,7 @@ export default function AddTripForm() {
               name="itinerary" 
               rows="5"
               value={itinerary}
+              placeholder='Please enter your plans'
               onChange={(e) => setItinerary(e.target.value)}
               />
       

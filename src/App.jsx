@@ -10,6 +10,8 @@ import Trips from './pages/Trips';
 import Itinerary from './pages/Itinerary';
 import NotFound from './pages/NotFound';
 import UserContext from './contexts/UserContext';
+import Footer from './components/Footer';
+import bgImage from './utils/imgs/bg-image.jpg';
 // import Itinerary from './components/ComponentItinerary';
 
 
@@ -43,9 +45,11 @@ function App() {
   };
 
   return (
+    <div className='App'>
      <UserContext.Provider value={userToken}>
           <Router>
             <Navbar />
+            <div className='main__view'>
             <Routes>
                 <Route path="/" element={<Home  />} /> 
                 <Route path="/register" element={<Register handleInputChange={handleInputChange} formData={formData} /> } /> 
@@ -56,8 +60,12 @@ function App() {
                 <Route path="/trips" element={<Trips  />} /> 
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            </div>
+            <Footer />
           </Router>
         </UserContext.Provider>
+        {/* <img src={bgImage} alt="" /> */}
+        </div>
   );
 }
 

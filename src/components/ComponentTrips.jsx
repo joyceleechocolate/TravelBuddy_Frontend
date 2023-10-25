@@ -11,8 +11,8 @@ const TripList = ({trips}) => {
     return (
         <>
         {trips.map((trip,index) => (
-            <div key={`a${index}`}>
-                <Link to={`/trips/${trip.id}/itinerary/`}>{trip.trip_name}</Link> 
+            <div className='trip__list__items__container' key={`a${index}`}>
+                <Link className='trip__list__items' to={`/trips/${trip.id}/itinerary/`}>{trip.trip_name}</Link> 
             </div>
         ))}
         </>

@@ -12,7 +12,48 @@
 }
 
 .trips__list__container {
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
+    border-right: 1px solid rgba(102, 102, 102, 0.9);
+    grid-column: 1 / 2;
     text-align: left;
+    font-size: 1.25rem;
+    overflow-x: auto;
+    overflow-y: auto;
+    
 }
+
+.trips__body__view {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr)
+}
+
+.trips__form__container {
+    grid-column: 2 / 8;
+    /* margin-top: 1rem; */
+}
+
+.trip__list__items__container {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+.trip__list__items {
+    /* margin: 1rem 0; */
+    text-decoration: none !important;
+
+}
+
+.trip__list__items:hover {
+    font-size: 1.30rem;
+}
+
+.trip__list__items::before {
+    content: "• "
+}
+
+.trip__list__items:visited, 
+.trip__list__items:link {
+    color: var(--main-font-color);
+    text-shadow: none !important;
+}
+

@@ -2,6 +2,7 @@ import { getItinerary, getAllItinerary } from '../api/authApi';
 import UserContext from '../contexts/UserContext';
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import './itinerary.css';
 
 
 
@@ -30,9 +31,9 @@ export default function Itinerary(){
 
 return(
     <>
-    <h1>My Itinerary</h1>
+    <h2>My Itinerary</h2>
     {itinerary.length > 0 ? (
-    <div>
+    <div className='itinerary__list__container'>
         {/* <p>Trip Number: {itinerary.id} </p> */}
         <p>Location: {itinerary[0].travel_location}</p>
         <p>Travel Date Starts: {itinerary[0].travel_date_begin}</p>
