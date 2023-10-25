@@ -58,7 +58,7 @@ return(
     {/* <div>
         {isFormVisible && <UpdateTripForm/>}
     </div> */}
-    <div id="map">map</div>
+    
     </>
 );
 
