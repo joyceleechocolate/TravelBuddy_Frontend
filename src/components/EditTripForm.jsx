@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { getAllItinerary, updateTrip, updateItinerary } from '../api/authApi'
 import UserContext from '../contexts/UserContext';
 import { useParams } from 'react-router-dom';
