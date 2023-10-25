@@ -43,8 +43,10 @@ return(
     </div>
     ) : (
         <p> Loading ... </p>
-    )} 
+    )}
+    <div> 
     <button className='edit__button'>Edit</button>
+    </div>
     </>
 );
 
